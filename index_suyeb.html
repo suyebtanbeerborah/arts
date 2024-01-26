@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      .rounded-button {
+            padding: 10px 20px;
+            border-radius: 15px;
+            background-color: #245aa1;
+            color: white;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f6fcff;
+            color: #3e444c;
+            transition: background-color 0.5s;
+        }
+
+        header {
+            background-color: #405167;
+            color: #ffffff;
+            text-align: center;
+            padding: 1em;
+            font-size: 0.9em;
+        }
+        header:hover {
+            background-color: #3e444c;
+        }
+
+        section {
+            margin: 2em;
+            padding: 2em;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px #efefef;
+        }
+
+        footer {
+            background-color: #00000000;
+            color: #245aa1;
+            text-align: center;
+            padding: 1em;
+            font-size: 0.9em;
+        }
+
+        footer:hover {
+            background-color: #ffffff00;
+        }
+
+        h2 {
+            color: #245aa1;
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+            transition: color 0.3s;
+        }
+
+        h3 {
+            color: #ffffff;
+            text-align: center;
+            font-size: 1em;
+        }
+
+        h2:hover {
+            color: #000000;
+            border-bottom: 2px solid #e7e7e7;
+        }
+
+        #images {
+            overflow: hidden;
+        }
+
+        .image-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        @media only screen and (max-width: 400px) {
+            body {
+                font-size: 14px;
+            }
+
+            header {
+                font-size: 0.8em;
+            }
+
+            h3 {
+                font-size: 0.8em;
+            }
+
+            section {
+                margin: 1em;
+                padding: 1em;
+            }
+
+            .image-container img {
+                border-radius: 4px;
+            }
+        }
+
+    </style>
+ <script>
+    let currentIndex = 0;
+
+    function showImage(index) {
+        const imageContainer = document.querySelector('.image-container');
+        currentIndex = index;
+        const transformValue = -index * 100 + '%';
+        imageContainer.style.transform = 'translateX(' + transformValue + ')';
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % imageCount;
+        showImage(currentIndex);
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + imageCount) % imageCount;
+        showImage(currentIndex);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        showImage(currentIndex);
+    });
+</script>
+    </script>
+    <title>Welcome to my webpage!</title>
+</head>
+
+<body>
+    <header>
+        <h1>Suyeb Tanbeer Borah</h1>
+        <h3>Welcome to my page! <br> Swipe down to see my artworks and can also order your custom portraits.</h3>
+    </header>
+
+    <section id="images">
+        <h2>Art Gallery (Human Portraits)</h2>
+        <div class="image-container">
+            <a href="https://lh3.googleusercontent.com/drive-viewer/AEYmBYS0g5qbkZGUbLs22sfx02ZM9nDAC1ELak_Q1Q-9Vr-3eqw-cjxwdmyEhbIltIZ3Sl3Sx8qHAYsLY72AW1ZyAiga7_jh=s1600?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/drive-viewer/AEYmBYS0g5qbkZGUbLs22sfx02ZM9nDAC1ELak_Q1Q-9Vr-3eqw-cjxwdmyEhbIltIZ3Sl3Sx8qHAYsLY72AW1ZyAiga7_jh=s1600" /> </a>
+            <a href="https://lh3.googleusercontent.com/drive-viewer/AEYmBYSbxcS4eQb2m9g_WjjE1RjuBsRSWrNS9heBL6muhL5bLiTW3POlwfrmpsJ1R31kD2bK17ESCg8UtE5fD3CoeTK4c35N=s1600?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/drive-viewer/AEYmBYSbxcS4eQb2m9g_WjjE1RjuBsRSWrNS9heBL6muhL5bLiTW3POlwfrmpsJ1R31kD2bK17ESCg8UtE5fD3CoeTK4c35N=s1600" /> </a>
+            <a href="https://lh3.googleusercontent.com/drive-viewer/AEYmBYTPYR_nTHypqxtuPI_cpvhuonhQ7PIPPULokNFiGrINpNeHi9pU6FOf9hjLhv4drTrqFddTuoaSARpyTYZdoKqbUPFvcg=s1600?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/drive-viewer/AEYmBYTPYR_nTHypqxtuPI_cpvhuonhQ7PIPPULokNFiGrINpNeHi9pU6FOf9hjLhv4drTrqFddTuoaSARpyTYZdoKqbUPFvcg=s1600" /> </a>
+            
+            <!-- Add more images as needed -->
+        </div>
+        
+    </section>
+
+    <section id="prices">
+        <h2>Price Tags (Human Portraits)</h2>
+        <p>Single Person Portrait (A4 Size): ₹300 INR<a href="https://wa.link/t4rmhe" class="rounded-button">Click to Order</a></p>
+        <p>Couple Portrait (A4 Size): ₹500 INR<a href="https://wa.link/t4rmhe" class="rounded-button">Click to Order</a></p>
+        <p>Full Family Portrait: ₹700 INR<a href="https://wa.link/t4rmhe" class="rounded-button">Click to Order</a></p>
+        <p>Portrait (Above 5 Persons): ₹1000 INR<a href="https://wa.link/t4rmhe" class="rounded-button">Click to Order</a></p>
+    </section>
+
+    <section id="images2">
+        <h2>Art Gallery (Anime Portraits)</h2>
+        <div class="image-container">
+            <a href="https://lh3.googleusercontent.com/drive-viewer/AEYmBYQZxOVxZNS8Qx0AMyASd0BHBFLDcT2FHXDrEKb9cOqDHSl6BdyyQGLKwXbz8Hd8WWiP2aHYS1ReHHaTnvtPf95OJDtp7w=s1600?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/drive-viewer/AEYmBYQZxOVxZNS8Qx0AMyASd0BHBFLDcT2FHXDrEKb9cOqDHSl6BdyyQGLKwXbz8Hd8WWiP2aHYS1ReHHaTnvtPf95OJDtp7w=s1600" /> </a>
+            <a href="https://lh3.googleusercontent.com/drive-viewer/AEYmBYTHe7Gw_rnlGueDS7AShfW16nezj4_z2vwBXJKMl9FGfGCShB5iyvSwGdHP6k6wT2n46mnT0FLppOKMIWbjA6Quj1SJ-w=s1600?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/drive-viewer/AEYmBYTHe7Gw_rnlGueDS7AShfW16nezj4_z2vwBXJKMl9FGfGCShB5iyvSwGdHP6k6wT2n46mnT0FLppOKMIWbjA6Quj1SJ-w=s1600" /> </a>
+            <a href="https://lh3.googleusercontent.com/drive-viewer/AEYmBYS6Ogku_59jrmVosi32QWTkxVsQVmGaZxvbx6PiLjgEtBHj9Vc6etjvWbueT7NVwL0ckCsHhr7UHH-qv0xZBrhcMcycrg=s1600?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/drive-viewer/AEYmBYS6Ogku_59jrmVosi32QWTkxVsQVmGaZxvbx6PiLjgEtBHj9Vc6etjvWbueT7NVwL0ckCsHhr7UHH-qv0xZBrhcMcycrg=s1600" /> </a>
+
+            <!-- Add more images as needed -->
+        </div>
+    </section>
+
+    <section id="prices2">
+        <h2>Price Tags (Anime Portraits)</h2>
+        <p>Sketch (A4 Size): ₹150 INR<a href="https://wa.link/t4rmhe" class="rounded-button">Click to Order</a></p>
+        <p>Sketch (A5 Size): ₹100 INR<a href="https://wa.link/t4rmhe" class="rounded-button">Click to Order</a></p>
+        <p>Colouring Drawing (A4 Size): ₹250 INR<a href="https://wa.link/t4rmhe" class="rounded-button">Click to Order</a></p>
+        <p>Colouring Drawing (A5 Size): ₹150 INR<a href="https://wa.link/t4rmhe" class="rounded-button">Click to Order</a></p>
+    </section>
+
+    <section id="about">
+        <h2>About</h2>
+        <p>Welcome to my art portfolio! I specialize in creating unique and personalized artworks that capture the essence
+            of each individual.
+            <br>
+            A self-thought younger artist.... with some craziness.. believe in self is the
+            biggest tool to improve yourself!
+        </p>
+    </section>
+
+    
+
+    <section id="conatct">
+        <h2>Contact Me</h2>
+        <p>Chat on Whatsapp:  <a href="https://wa.link/t4rmhe">Let's talk!</a></p>
+        <p>Visit Instagram:  <a href="https://www.instagram.com/suyebtanbeer">@suyebtanbeer</a></p>
+    </section>
+    </section>
+
+    <footer>
+        <p>Thanks for visiting!</p>
+        <p>Coded in HTML & CSS by Tanmay Karmakar</p>
+        <p>Visit Instgram:<a href="https://www.instagram.com/thattanmayy">@thattanmayy</a></p>
+    </footer>
+</body>
+</html>
